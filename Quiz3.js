@@ -1,11 +1,11 @@
 function checkNumberBoatsFromPeople(people, limit) {
     if (people.length < 1 || people.length > 5 * Math.pow(10, 4)) {
-        return "Invalid array length";
+        return "Invalid array range 1 - 50,000";
     }
     
     for (let i = 0; i < people.length; i++) {
-        if (people[i] < 1 || people[i] > limit || limit > 3 * Math.pow(10, 4)) {
-            return "Invalid array values or limit";
+        if (people[i] < 1 || people[i] > limit || limit < 1 || limit > 3 * Math.pow(10, 4)) {
+            return "Invalid array values range 1 - limit or limit range 1 -30,000 ";
         }
     }
     
@@ -27,7 +27,7 @@ function checkNumberBoatsFromPeople(people, limit) {
     return boats;
 }
 
-console.log(checkNumberBoatsFromPeople([1, 2], 3)); // Output: 1
-console.log(checkNumberBoatsFromPeople([3, 2, 2, 1], 3)); // Output: 3
-console.log(checkNumberBoatsFromPeople([3, 2, 2, 1], 5)); // Output: 2
-console.log(checkNumberBoatsFromPeople([3, 5, 3, 4], 5)); // Output: 4
+console.log("Output:",checkNumberBoatsFromPeople([1, 2], 3)); // Output: 1
+console.log("Output:",checkNumberBoatsFromPeople([3, 2, 2, 1], 3)); // Output: 3
+console.log("Output:",checkNumberBoatsFromPeople([3, 2, 2, 1], 5)); // Output: 2
+console.log("Output:",checkNumberBoatsFromPeople([3, 5, 3, 4], 5)); // Output: 4
